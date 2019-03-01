@@ -1,0 +1,52 @@
+version: '3.3'
+
+services:
+  nginx:
+    ports:
+      - "4000:80"
+      - "443:443"
+    build:
+      args:
+        RUNNING_ENV: dev        
+  mongodb:
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongodata:/data/db
+  cache:
+    environment:
+      - NODE_ENV=development
+    command: npm start
+    # command: sh -c "cd ../shared/modules/coinpush && npm run build && cd ../../../server-cache && npm start"
+  gateway:
+    environment:
+      - NODE_ENV=development
+    command: npm start
+    # command: sh -c "cd ../shared/modules/coinpush && npm run build && cd ../../../server-gateway && npm start"
+  user:
+    environment:
+      - NODE_ENV=development
+    command: npm start
+    # command: sh -c "cd ../shared/modules/coinpush && npm run build && cd ../../../server-user && npm start"
+  comment:
+    environment:
+      - NODE_ENV=development
+    command: npm start
+    # command: sh -c "cd ../shared/modules/coinpush && npm run build && cd ../../../server-comment && npm start"
+  event:
+    environment:
+      - NODE_ENV=development
+    command: npm start
+    # command: sh -c "cd ../shared/modules/coinpush && npm run build && cd ../../../server-event && npm start"
+  notify:
+    environment:
+      - NODE_ENV=development
+    command: npm start
+    # command: sh -c "cd ../shared/modules/coinpush && npm run build && cd ../../../server-notify && npm start"
+  client:
+    environment:
+      - NODE_ENV=development
+    command: npm start
+    # command: sh -c "cd ../shared/modules/coinpush && npm run build && cd ../../../client && npm start"
+volumes:
+  mongodata:

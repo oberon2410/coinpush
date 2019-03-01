@@ -1,0 +1,27 @@
+### global
+**/Dockerfile
+**/node_modules
+**/_log
+**/.git
+**/.gitignore
+**/.idea
+**/.vscode
+**/.DS_Store
+**/*.map
+**/*.md
+**/*.js
+**/*.yml
+**/*.txt
+**/*.log
+**/*.tmp
+
+# mobile app
+client-app/.gradle
+client-app/hooks/
+client-app/platforms/
+client-app/plugins/
+client-app/res/
+client-app/scripts/
+
+### redis
+**/dump.rdb

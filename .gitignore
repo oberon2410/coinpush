@@ -1,0 +1,16 @@
+.DS_Store
+.idea/
+.vscode/
+.gradle
+temp.txt
+
+node_modules
+/_data
+_log
+
+npm-debug.log
+package-lock.json
+*.map
+log.txt
+
+coinpush.config.custom.js
